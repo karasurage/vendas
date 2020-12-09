@@ -10,9 +10,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
-import static org.springframework.http.HttpStatus.CREATED;
-import static org.springframework.http.HttpStatus.NO_CONTENT;
-
 @RestController
 @RequestMapping("/api/produtos")
 public class ProdutoController {
@@ -24,13 +21,13 @@ public class ProdutoController {
     }
 
     @PostMapping
-    @ResponseStatus(CREATED)
+    @ResponseStatus(HttpStatus.CREATED)
     public Produto save(@RequestBody Produto produto) {
         return repository.save(produto);
     }
 
     @PutMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void update(@PathVariable Integer id, @RequestBody Produto produto) {
         repository
                 .findById(id)
@@ -44,7 +41,7 @@ public class ProdutoController {
     }
 
     @DeleteMapping("{id}")
-    @ResponseStatus(NO_CONTENT)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id) {
         repository
                 .findById(id)
