@@ -4,8 +4,6 @@
 
 [Link para o curso](https://www.udemy.com/course/spring-boot-expert/)
 
-[Link deploy no Heroku]()
-
 > Informações pertinentes ao projeto abaixo:
 
 - Swagger
